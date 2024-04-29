@@ -13,7 +13,7 @@ let gIo: Server<CustomSocket> | null = null
 export function setupSocketAPI(http: HttpServer) {
       gIo = new Server(http, {
             cors: {
-                  origin: ['tu-depa-47047.firebaseapp.com', 'tu-depa-47047.firebaseapp.com'],
+                  origin: 'https://tu-depa-47047.firebaseapp.com',
             }
       })
       gIo.on('connection', (socket: CustomSocket) => {
