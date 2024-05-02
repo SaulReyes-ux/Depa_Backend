@@ -32,6 +32,7 @@ app.use('/api/stay', stayRoutes)
 app.use('/api/order', orderRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/auth', authRoutes)
+app.use('/api/socket.io', setupSocketAPI)
 setupSocketAPI(http)
 
 const port = process.env.PORT || 3030
