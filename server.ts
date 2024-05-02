@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
       app.use(express.static(path.resolve(__dirname, 'public')))
 } else {
       const corsOptions = {
-            origin: ['http://127.0.0.1:4200', 'http://localhost:4200'],
+            origin: 'tu-depa-47047.firebaseapp.com',
             credentials: true
       }
       app.use(cors(corsOptions))
