@@ -13,11 +13,11 @@ app.use(express.json())
 app.use(compression())
 const http = require('http').createServer(app)
 
-const corsOptions = {
-      origin: 'tu-depa-47047.firebaseapp.com',
-      credentials: true
-}
-app.use(cors(corsOptions))
+// const corsOptions = {
+//       origin: 'https://tu-depa-47047.firebaseapp.com/',
+//       credentials: true
+// }
+// app.use(cors(corsOptions))
 
 import { router as stayRoutes } from './api/stay/stay.routes'
 import { router as orderRoutes } from './api/order/order.routes'
