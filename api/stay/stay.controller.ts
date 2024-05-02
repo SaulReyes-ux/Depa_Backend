@@ -43,11 +43,19 @@ async function addStay(req: Request, res: Response) {
       try {
             const stay = req.body
 
+<<<<<<< HEAD
             //const fullAddress = `${stay.loc.address}, ${stay.loc.city}, ${stay.loc.country}`
             //const latLng = await stayService.getLatLng(fullAddress)
             //Coordenadas obtenidas de nominatim.openstreetmap.org
             //stay.loc.lat = latLng.lat as number
            // stay.loc.lan = latLng.lon as number
+=======
+            const fullAddress = `${stay.loc.address}, ${stay.loc.city}, ${stay.loc.country}`
+            const latLng = await stayService.getLatLng(fullAddress)
+            //Coordenadas obtenidas de nominatim.openstreetmap.org
+            stay.loc.lat = latLng.lat as number
+            stay.loc.lan = latLng.lon as number
+>>>>>>> 2a656b629204839c9d8253e34653067e8fcf95c4
             const addedStay = await stayService.add(stay)
             res.json(addedStay)
       } catch (err) {

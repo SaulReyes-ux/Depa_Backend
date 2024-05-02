@@ -17,7 +17,11 @@ if (process.env.NODE_ENV === 'production') {
       app.use(express.static(path.resolve(__dirname, 'public')))
 } else {
       const corsOptions = {
+<<<<<<< HEAD
             origin: 'https://tu-depa-47047.firebaseapp.com',
+=======
+            origin: 'tu-depa-47047.firebaseapp.com',
+>>>>>>> 2a656b629204839c9d8253e34653067e8fcf95c4
             credentials: true
       }
       app.use(cors(corsOptions))
@@ -37,6 +41,7 @@ setupSocketAPI(http)
 
 app.get('/**', (_: Request, res: Response) => {
       res.sendFile(path.join(__dirname, 'public', 'index.html'))
+<<<<<<< HEAD
       logger.info('Hola si dirije')
 })
 
@@ -46,3 +51,11 @@ const port = process.env.PORT || 3030
 http.listen(port, '0.0.0.0', () => {
       logger.info('Server is running on port: ' + port)
 })
+=======
+})
+
+const port = process.env.PORT || 3030
+http.listen(port, '0.0.0.0', () => {
+      logger.info('Server is running on port: ' + port)
+})
+>>>>>>> 2a656b629204839c9d8253e34653067e8fcf95c4

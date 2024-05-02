@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "NodeNext",
+<<<<<<< HEAD
     "moduleResolution": "NodeNext",
+=======
+    "moduleResolution": "Node",
+>>>>>>> 2a656b629204839c9d8253e34653067e8fcf95c4
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,                                     
