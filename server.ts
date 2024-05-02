@@ -39,6 +39,10 @@ setupSocketAPI(http)
 //       res.sendFile(path.join(__dirname, 'public', 'index.html'))
 // })
 
+app.get('/test', (_: Request, res: Response) => {
+      res.send('Hola mundo')
+})
+
 const port = process.env.PORT || 3030
 http.listen(port, '0.0.0.0', () => {
       logger.info('Server is running on port: ' + port)
