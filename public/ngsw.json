@@ -86,7 +86,7 @@
     {
       "name": "api",
       "patterns": [
-        "http:\\/\\/localhost:4200"
+        "https://tu-depa-47047.firebaseapp.com/"
       ],
       "strategy": "performance",
       "maxSize": 20,
