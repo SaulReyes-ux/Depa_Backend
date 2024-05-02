@@ -11,7 +11,7 @@ app.use(express.static('public'))
 app.use(cookieParser())
 app.use(express.json())
 app.use(compression())
-const http = require('https').createServer(app)
+const http = require('http').createServer(app)
 
 const corsOptions = {
       origin: 'https://tu-depa-47047.web.app/',
