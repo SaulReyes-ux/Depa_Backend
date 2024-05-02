@@ -15,6 +15,7 @@ const http = require('http').createServer(app)
 
 const corsOptions = {
       origin: 'https://tu-depa-47047.web.app/',
+      optionsSuccessStatus : 200,
       credentials: true
 }
 app.use(cors(corsOptions))
