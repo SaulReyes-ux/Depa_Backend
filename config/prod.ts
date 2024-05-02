@@ -1,4 +1,4 @@
 module.exports = {
-  dbURL: 'mongodb+srv://marinreyessaulguadalupe2000:tuDepa123@depa.imwfpjc.mongodb.net/?retryWrites=true&w=majority&appName=Depa',
+  dbURL: 'mongodb+srv://utng:utng@generica.zwywzuh.mongodb.net/?retryWrites=true&w=majority',
   dbName: 'Depa'
 }
