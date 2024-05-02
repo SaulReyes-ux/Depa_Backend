@@ -13,13 +13,13 @@ app.use(express.json())
 app.use(compression())
 const http = require('http').createServer(app)
 
-const corsOptions = {
-      origin: 'https://tu-depa-47047.web.app/',
-      credentials: true
-}
-app.use(cors(corsOptions))
+// const corsOptions = {
+//       origin: 'https://tu-depa-47047.web.app/',
+//       credentials: true
+// }
+// app.use(cors(corsOptions))
 
-// app.use(cors())
+app.use(cors())
 
 import { router as stayRoutes } from './api/stay/stay.routes'
 import { router as orderRoutes } from './api/order/order.routes'
