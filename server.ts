@@ -35,9 +35,9 @@ app.use('/api/user', userRoutes)
 app.use('/api/auth', authRoutes)
 setupSocketAPI(http)
 
-app.get('/**', (_: Request, res: Response) => {
-      res.sendFile(path.join(__dirname, 'public', 'index.html'))
-})
+// app.get('/**', (_: Request, res: Response) => {
+//       res.sendFile(path.join(__dirname, 'public', 'index.html'))
+// })
 
 const port = process.env.PORT || 3030
 http.listen(port, '0.0.0.0', () => {
