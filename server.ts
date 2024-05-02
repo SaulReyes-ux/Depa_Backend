@@ -31,10 +31,6 @@ app.use('/api/user', userRoutes)
 app.use('/api/auth', authRoutes)
 setupSocketAPI(http)
 
-app.get('/test', (_: Request, res: Response) => {
-      res.send('Hola mundo')
-})
-
 const port = process.env.PORT || 3030
 http.listen(port, '0.0.0.0', () => {
       logger.info('Server is running on port: ' + port)
