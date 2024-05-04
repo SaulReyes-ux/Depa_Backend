@@ -9,6 +9,7 @@ async function query(filterBy: StayFilter, index: number) {
     try {
         const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('stay')
+        logger.info('criteria:', criteria)
         const stays = await collection.find(criteria).toArray()
         return stays.slice(STAY_INCREMENT * index, STAY_INCREMENT * index + STAY_INCREMENT)
     } catch (err) {
