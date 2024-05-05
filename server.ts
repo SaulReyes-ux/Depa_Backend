@@ -14,7 +14,7 @@ app.use(compression())
 const http = require('http').createServer(app)
 
 const corsOptions = {
-      origin: 'https://tu-depa-47047.web.app:10000',
+      origin: 'https://tu-depa-47047.web.app',
       credentials: true
 }
 app.use(cors(corsOptions))
