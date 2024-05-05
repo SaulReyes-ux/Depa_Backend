@@ -13,7 +13,7 @@ let gIo: Server<CustomSocket> | null = null
 export function setupSocketAPI(http: HttpServer) {
       gIo = new Server(http, {
             cors: {
-                  origin: "https://tu-depa-47047.web.app/",
+                  origin: "https://tu-depa-47047.web.app",
                   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
                   preflightContinue: false,
                   optionsSuccessStatus: 204
