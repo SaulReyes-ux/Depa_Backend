@@ -8,6 +8,7 @@ const STAY_INCREMENT = 20
 async function query(filterBy: StayFilter, index: number) {
     try {
         const criteria = _buildCriteria(filterBy)
+        console.log('criteria:', criteria)
         const collection = await dbService.getCollection('stay')
         const stays = await collection.find(criteria).toArray()
         return stays.slice(STAY_INCREMENT * index, STAY_INCREMENT * index + STAY_INCREMENT)
