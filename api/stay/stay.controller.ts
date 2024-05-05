@@ -4,11 +4,9 @@ import { Request, Response } from 'express'
 import { StayFilter } from '../../models/stay.model'
 
 async function getStays(req: Request, res: Response) {
-      // console.log(req)
       try {
             const filterBy = req.query as StayFilter
             const index = req.query.page ? +req.query.page : 0
-            // logger.debug('Getting stays')
             const stays = await stayService.query(filterBy , index)
             res.json(stays)
       } catch (err) {

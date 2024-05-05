@@ -9,7 +9,6 @@ async function query(filterBy: StayFilter, index: number) {
     try {
         const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('stay')
-        console.log('criteria:', criteria)
         const stays = await collection.find(criteria).toArray()
         return stays.slice(STAY_INCREMENT * index, STAY_INCREMENT * index + STAY_INCREMENT)
     } catch (err) {
@@ -81,6 +80,9 @@ function _buildCriteria(filterBy: StayFilter) {
     }
     if (filterBy?.isPetAllowed === 'true') {
         criteria.amenities = { $in: ['Pets allowed'] }
+    }
+    if(filterBy?.name){
+        criteria.name = { $regex: filterBy.name, $options: 'i' }
     }
     return criteria
 }
