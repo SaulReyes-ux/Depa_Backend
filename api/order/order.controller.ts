@@ -10,7 +10,7 @@ async function getOrders(req: Request, res: Response) {
             const orders = await orderService.query(filterBy) 
             res.json(orders)
       } catch (err) {
-            logger.error('Failed to get orders', err)
+            console.log('Failed to get orders', err)
             res.status(500).send({ err: 'Failed to get orders' })
       }
 }
@@ -21,7 +21,7 @@ async function addOrder(req: Request, res: Response) {
             const addedOrder = await orderService.add(order)
             res.json(addedOrder)
       } catch (err) {
-            logger.error('Failed to add order', err)
+            console.log('Failed to add order', err)
             res.status(500).send({ err: 'Failed to add order' })
       }
 }
@@ -32,7 +32,7 @@ async function updateOrder(req: Request, res: Response) {
             const updatedOrder = await orderService.update(order)
             res.json(updatedOrder)
       } catch (err) {
-            logger.error('Failed to update order', err)
+            console.log('Failed to update order', err)
             res.status(500).send({ err: 'Failed to update order' })
       }
 }

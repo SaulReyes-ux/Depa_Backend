@@ -34,5 +34,5 @@ setupSocketAPI(http)
 
 const port = process.env.PORT || 3030
 http.listen(port, '0.0.0.0', () => {
-      logger.info('Server is running on port: ' + port)
+      console.log('Server is running on port: ' + port)
 })

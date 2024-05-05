@@ -13,7 +13,7 @@ async function query() {
             })
             return sanitizedUsers
       } catch (err) {
-            logger.error('cannot find users', err)
+            console.log('cannot find users', err)
             throw err
       }
 }
@@ -25,7 +25,7 @@ async function getById(userId: string) {
             if(user) delete user.password
             return user
       } catch (err) {
-            logger.error(`while finding user by id: ${userId}`, err)
+            console.log(`while finding user by id: ${userId}`, err)
             throw err
       }
 }
@@ -36,7 +36,7 @@ async function getByUsername(username: string) {
             const users = await collection.find({ username }).toArray()
             return users
       } catch (err) {
-            logger.error(`while finding user by username: ${username}`, err)
+            console.log(`while finding user by username: ${username}`, err)
             throw err
       }
 }
@@ -49,7 +49,7 @@ async function update(user: User) {
             await collection.updateOne({ _id: new ObjectId(user._id) }, { $set: userToSave })
             return user
       } catch (err) {
-            logger.error(`cannot update user ${user._id}`, err)
+            console.log(`cannot update user ${user._id}`, err)
             throw err
       }
 }
@@ -61,7 +61,7 @@ async function add(user: User) {
             await collection.insertOne(userToAdd)
             return userToAdd
       } catch (err) {
-            logger.error('cannot add user', err)
+            console.log('cannot add user', err)
             throw err
       }
 }

@@ -11,7 +11,7 @@ async function query(filterBy: FilterOrder) {
             var orders = await collection.find(criteria).toArray()
             return orders
       } catch (err) {
-            logger.error('cannot find orders', err)
+            console.log('cannot find orders', err)
             throw err
       }
 }
@@ -22,7 +22,7 @@ async function add(order: Order) {
             await collection.insertOne(order)
             return order
       } catch (err) {
-            logger.error('cannot insert order', err)
+            console.log('cannot insert order', err)
             throw err
       }
 }
@@ -35,7 +35,7 @@ async function update(order: Order) {
             await collection.updateOne({ _id: new ObjectId(order._id) }, { $set: orderToSave })
             return order
       } catch (err) {
-            logger.error(`cannot update order ${order._id}`, err)
+            console.log(`cannot update order ${order._id}`, err)
             throw err
       }
 }

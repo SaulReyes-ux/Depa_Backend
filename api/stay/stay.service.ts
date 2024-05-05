@@ -25,7 +25,7 @@ async function staysLength(filterBy: StayFilter) {
         const stays = await collection.find(criteria).toArray()
         return stays.length
     } catch (err) {
-        logger.error('cannot find stays', err)
+        console.log('cannot find stays', err)
         throw err
     }
 }
@@ -36,7 +36,7 @@ async function getById(stayId: string) {
         const stay = collection.findOne({ _id: new ObjectId(stayId) })
         return stay
     } catch (err) {
-        logger.error(`while finding stay ${stayId}`, err)
+        console.log(`while finding stay ${stayId}`, err)
         throw err
     }
 }
@@ -47,7 +47,7 @@ async function add(stay: Stay) {
         await collection.insertOne(stay)
         return stay
     } catch (err) {
-        logger.error('cannot insert stay', err)
+        console.log('cannot insert stay', err)
         throw err
     }
 }
@@ -60,7 +60,7 @@ async function update(stay: Stay) {
         await collection.updateOne({ _id: new ObjectId(stay._id) }, { $set: stayToSave })
         return stay
     } catch (err) {
-        logger.error(`cannot update stay ${stay._id}`, err)
+        console.log(`cannot update stay ${stay._id}`, err)
         throw err
     }
 }
