@@ -9,11 +9,11 @@ async function query(filterBy: StayFilter, index: number) {
     try {
         const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('stay')
-        logger.info('criteria:', criteria)
+        console.log('criteria:', criteria)
         const stays = await collection.find(criteria).toArray()
         return stays.slice(STAY_INCREMENT * index, STAY_INCREMENT * index + STAY_INCREMENT)
     } catch (err) {
-        logger.error('cannot find stays', err)
+        console.log(err)
         throw err
     }
 }

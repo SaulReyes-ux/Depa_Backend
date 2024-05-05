@@ -4,14 +4,16 @@ import { Request, Response } from 'express'
 import { StayFilter } from '../../models/stay.model'
 
 async function getStays(req: Request, res: Response) {
+      // logger.info(req)
       try {
             const filterBy = req.query as StayFilter
             const index = req.query.page ? +req.query.page : 0
-            logger.debug('Getting stays')
+            // logger.debug('Getting stays')
             const stays = await stayService.query(filterBy , index)
             res.json(stays)
       } catch (err) {
-            logger.error('Failed to get stays', err)
+            // logger.error('Failed to get stays', err)
+            console.log(err)
             res.status(500).send({ err: 'Failed to get stays' })
       }
 }
